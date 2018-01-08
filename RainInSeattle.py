@@ -52,14 +52,6 @@ Seattle["relative_monthly_precipitation"] = relative_precipitation
 
 #Now I want to run this code for each station
 
-#First I create a dictionary and a list for each other station
-Cincinnati = {}
-cincinnati = []
-Maui = {}
-maui = []
-San_Diego = {}
-san_diego = []
-
 
 import csv
 #In the following step I create a dictionary with each station code as key and the station as corresponding value
@@ -75,8 +67,12 @@ main_dict = {"Cincinnati" : {}, "Maui" : {}, "Seattle" : {}, "San Diego" : {}}
 for recording in raw_prec_data:
     main_dict[ciy_dict[recording["station"]]["totalYearPrecipitation"]] += recording["value"]
     
-   
+ 
+# At this point I don't reall know how to go on without you guys. 
+# The plan was to have one loop, that goes through all measurements and already organizes them
+# using the dictionary city_dict, which connects the station-code to the city, I wanted to assign the values directly
+# to the corresponding key in the dictionary main_dict
 
 
-for recording in raw_prec_data:
-    ciy_dict[recording["station"]][3] = recording["value"]
+# I also changed the code for Seattle itself a little, taking out one of the loops that is unnecessary
+
